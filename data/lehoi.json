@@ -1,0 +1,112 @@
+[
+  {
+      "ten": "Lễ hội đền Hùng - Giỗ tổ vua Hùng Vương",
+      "nguon_goc": "Phú Thọ",
+      "thoi_gian_bat_dau": "Ngày 8 tháng 3 âm lịch",
+      "thoi_gian_ket_thuc": "Ngày 11 tháng 3 âm lịch",
+      "quy_mo": "Lễ hội quy tụ đông đảo người tham gia, thu hút khách du lịch",
+      "hoat_dong": "Lễ cúng tưởng nhớ Tổ vua Hùng Vương, Diễn tập và biểu diễn nghệ thuật, Các hoạt động văn hóa truyền thống"
+  },
+  {
+      "ten": "Lễ hội miếu Bà Chúa Xứ núi Sam tỉnh An Giang",
+      "nguon_goc": "An Giang",
+      "thoi_gian_bat_dau": "Thường vào tháng 4 âm lịch",
+      "thoi_gian_ket_thuc": "Dựa vào lịch trình cụ thể của từng năm",
+      "quy_mo": "Lễ hội tôn vinh và cầu nguyện cho Bà Chúa Xứ",
+      "hoat_dong": "Diễn hóa múa lân và múa rồng, Các hoạt động nghệ thuật truyền thống"
+  },
+  {
+      "ten": "Lễ hội chùa Hương hay trẩy hội chùa Hương",
+      "nguon_goc": "Hà Nội",
+      "thoi_gian_bat_dau": "Từ ngày 6 đến ngày 15 tháng Giêng âm lịch",
+      "thoi_gian_ket_thuc": "Khoảng ba tháng kể từ ngày bắt đầu",
+      "quy_mo": "Lễ hội lớn nhất, thu hút hàng triệu lượt người tham gia",
+      "hoat_dong": "Du thuyền qua các hòn đảo, Thăm hang động, Câu cá và thưởng thức hải sản tươi ngon"
+  },
+  {
+      "ten": "Lễ hội Nghinh Ông",
+      "nguon_goc": "Cần Giờ",
+      "thoi_gian_bat_dau": "Thường diễn ra vào cuối năm",
+      "quy_mo": "Lễ hội truyền thống với nhiều hoạt động văn hóa và tâm linh",
+      "hoat_dong": "Cúng ông Địa, Biểu diễn múa lân và múa rồng, Các trò chơi dân gian"
+  },
+  {
+      "ten": "Lễ hội xuân Yên Tử tri ân công đức Phật Hoàng Trần Nhân Tông",
+      "nguon_goc": "Quảng Ninh",
+      "thoi_gian_bat_dau": "Thường vào dịp Tết Nguyên Đán",
+      "quy_mo": "Lễ hội với nhiều hoạt động tâm linh và văn hóa",
+      "hoat_dong": "Lễ cúng tưởng nhớ công đức của Phật Hoàng Trần Nhân Tông, Các hoạt động lễ hội truyền thống"
+  },
+  {
+      "ten": "Lễ vía Ngũ Hành Nương Nương tại miếu Bà Ngũ Hành tại Long An",
+      "nguon_goc": "Long An",
+      "thoi_gian_bat_dau": "Thường vào tháng 2 âm lịch",
+      "thoi_gian_ket_thuc": "Dựa vào lịch trình cụ thể của từng năm",
+      "quy_mo": "Lễ hội tâm linh tôn vinh Ngũ Hành Nương Nương"
+  },
+  {
+      "ten": "Lễ hội chùa Bái Đính",
+      "nguon_goc": "Ninh Bình",
+      "thoi_gian_bat_dau": "Thường vào dịp lễ Tết Nguyên Đán",
+      "quy_mo": "Lễ hội hành hương về vùng đất cố đô Hoa Lư",
+      "hoat_dong": "Lễ cúng tưởng nhớ các vị thánh, Biểu diễn nghệ thuật và văn hóa"
+  },
+  {
+      "ten": "Lễ hội đền Trần tại phường Lộc Vượng, thành phố Nam Định",
+      "nguon_goc": "Nam Định",
+      "thoi_gian_bat_dau": "Thường vào tháng 2 âm lịch",
+      "quy_mo": "Lễ hội tôn vinh vị thần quan trọng",
+      "hoat_dong": "Lễ cúng và diễn tập các trận đánh lịch sử, Biểu diễn nghệ thuật truyền thống"
+  },
+  {
+      "ten": "Lễ hội Tháp Bà Ponagar",
+      "nguon_goc": "Khánh Hòa",
+      "thoi_gian_bat_dau": "Thường vào tháng 4 hoặc tháng 5",
+      "quy_mo": "Lễ hội tôn vinh Thánh Mẫu Ponagar",
+      "hoat_dong": "Lễ cúng tưởng nhớ Thánh Mẫu, Biểu diễn văn hóa dân gian"
+  },
+  {
+      "ten": "Hội Lim",
+      "nguon_goc": "Kinh Bắc",
+      "thoi_gian_bat_dau": "Thường vào tháng 1 âm lịch",
+      "thoi_gian_ket_thuc": "Dựa vào lịch trình cụ thể của từng năm",
+      "quy_mo": "Lễ hội truyền thống lớn nhất vùng Kinh Bắc",
+      "hoat_dong": "Lễ cúng tưởng nhớ vị thần quan trọng, Biểu diễn nghệ thuật và văn hóa"
+  },
+  {
+      "ten": "Lễ Vu Lan thắng hội",
+      "thoi_gian_bat_dau": "Thường vào tháng 7 âm lịch",
+      "quy_mo": "Lễ hội tâm linh tôn vinh lòng hiếu thảo",
+      "hoat_dong": "Lễ cúng tưởng nhớ tổ tiên, Các hoạt động từ thiện và xã hội"
+  },
+  {
+      "ten": "Lễ cúng biển ở Mỹ Long",
+      "nguon_goc": "Bến Tre",
+      "thoi_gian_bat_dau": "Thường vào tháng 4 âm lịch",
+      "thoi_gian_ket_thuc": "Dựa vào lịch trình cụ thể của từng năm",
+      "quy_mo": "Lễ hội tâm linh và văn hóa truyền thống",
+      "hoat_dong": "Lễ cúng và hành hương tới biển, Biểu diễn văn hóa dân gian"
+  },
+  {
+      "ten": "Lễ hội đền Gióng tại Sóc Sơn",
+      "nguon_goc": "Hà Nội",
+      "thoi_gian_bat_dau": "Thường vào tháng 4 âm lịch",
+      "thoi_gian_ket_thuc": "Dựa vào lịch trình cụ thể của từng năm",
+      "quy_mo": "Lễ hội tôn vinh vị anh hùng dân tộc Gióng",
+      "hoat_dong": "Diễn tập các trận đánh lịch sử, Biểu diễn văn hóa truyền thống"
+  },
+  {
+      "ten": "Lễ hội đền Hai Bà Trưng - Mê Linh",
+      "nguon_goc": "Hà Nội",
+      "thoi_gian_bat_dau": "Thường vào tháng 2 âm lịch",
+      "thoi_gian_ket_thuc": "Dựa vào lịch trình cụ thể của từng năm",
+      "quy_mo": "Lễ hội tưởng nhớ và tôn vinh nhà nữ anh hùng Hai Bà Trưng",
+      "hoat_dong": "Diễn tập và biểu diễn văn hóa dân gian, Các hoạt động tâm linh"
+  },
+  {
+      "ten": "Tết nguyên đán",
+      "thoi_gian_bat_dau": "Dương lịch từ 29 tháng 12 đến mùng 7 tháng 1",
+      "quy_mo": "Lễ hội lớn nhất và quan trọng nhất tại Việt Nam",
+      "hoat_dong": "Gia đình sum họp, Lễ cúng tưởng nhớ tổ tiên, Các trò chơi dân gian"
+  }
+]

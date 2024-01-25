@@ -1,6 +1,7 @@
 const { LeHoi } = require('../models')
 
 module.exports = {
+    // [GET] /api/lehoi
     get: async (req, res) => {
         try {
             const data = await LeHoi.findAll()
@@ -13,6 +14,7 @@ module.exports = {
         }
     },
 
+    // [GET] /api/lehoi/:id
     getById: async (req, res) => {
         try {
             const params = req.params

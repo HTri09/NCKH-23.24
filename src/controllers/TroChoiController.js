@@ -1,6 +1,7 @@
 const { TroChoi } = require('../models')
 
 module.exports = {
+    // [GET] /api/trochoi
     get: async (req, res) => {
         try {
             const data = await TroChoi.findAll()
@@ -13,6 +14,7 @@ module.exports = {
         }
     },
 
+    // [GET] /api/trochoi/:id
     getById: async (req, res) => {
         try {
             const params = req.params

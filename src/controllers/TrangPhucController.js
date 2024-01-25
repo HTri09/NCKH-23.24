@@ -1,6 +1,7 @@
 const { TrangPhuc } = require('../models')
 
 module.exports = {
+    // [GET] /api/trangphuc
     get: async (req, res) => {
         try {
             const data = await TrangPhuc.findAll()
@@ -13,6 +14,7 @@ module.exports = {
         }
     },
 
+    // [GET] /api/trangphuc/:id
     getById: async (req, res) => {
         try {
             const params = req.params

@@ -1,6 +1,7 @@
 const { MonAn } = require('../models')
 
 module.exports = {
+    // [GET] /api/monan
     get: async (req, res) => {
         try {
             const data = await MonAn.findAll()
@@ -13,6 +14,7 @@ module.exports = {
         }
     },
 
+    // [GET] /api/monan/:id
     getById: async (req, res) => {
         try {
             const params = req.params

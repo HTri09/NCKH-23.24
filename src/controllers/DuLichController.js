@@ -1,6 +1,7 @@
 const { DuLich } = require('../models')
 
 module.exports = {
+    // [GET] /api/dulich
     get: async (req, res) => {
         try {
             const data = await DuLich.findAll()
@@ -13,6 +14,7 @@ module.exports = {
         }
     },
 
+    // [GET] /api/dulich/:id
     getById: async (req, res) => {
         try {
             const params = req.params

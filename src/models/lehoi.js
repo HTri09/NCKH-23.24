@@ -14,13 +14,13 @@ module.exports = (sequelize, DataTypes) => {
     }
   }
   LeHoi.init({
-    tenLeHoi: {
+    ten: {
       type: DataTypes.STRING
     },
     nguonGoc: {
       type: DataTypes.STRING
     },
-    thoiGianBatdau: {
+    thoiGianBatDau: {
       type: DataTypes.STRING
     },
     thoiGianKetThuc: {

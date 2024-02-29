@@ -4,7 +4,6 @@
     "description": "hehe",
     "main": "index.js",
     "scripts": {
-        "test": "echo \"Error: no test specified\" && exit 1",
         "start": "nodemon --inspect ./main.js",
         "seed:up": "npx sequelize-cli db:seed",
         "seed:up:all": "npx sequelize-cli db:seed:all",
@@ -17,13 +16,15 @@
     "author": "",
     "license": "ISC",
     "dependencies": {
-        "body-parser": "^1.20.2",
+        "@tensorflow/tfjs": "^4.17.0",
+        "@tensorflow/tfjs-node": "^4.17.0",
         "db-migrate": "^0.11.14",
         "db-migrate-pg": "^1.5.2",
+        "dotenv": "^16.4.1",
         "express": "^4.18.2",
         "morgan": "^1.10.0",
         "nodemon": "^3.0.2",
-        "pg": "^8.11.3",
+        "openai": "^4.0.0",
         "sequelize": "^6.35.2",
         "sequelize-cli": "^6.6.2"
     }

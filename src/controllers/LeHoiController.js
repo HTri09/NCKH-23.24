@@ -5,9 +5,9 @@ module.exports = {
     get: async (req, res) => {
         try {
             const data = await LeHoi.findAll()
-            return res.json(data)
+            res.json(data)
         } catch (err) {
-            return res.status(500).json({
+            res.status(500).json({
                 status: err.status,
                 msg: err.msg
             })
@@ -22,9 +22,9 @@ module.exports = {
             const data = await LeHoi.findOne({
                 where: { id: params.id }
             })
-            return res.json(data)
+            res.json(data)
         } catch(err) {
-            return res.json(err)
+            res.json(err)
         }
     }
 }

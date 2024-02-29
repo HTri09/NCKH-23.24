@@ -3,6 +3,7 @@ const trangPhucRouter = require('./TrangPhuc.js')
 const troChoiRouter = require('./TroChoi.js')
 const leHoiRouter = require('./LeHoi.js')
 const duLichRouter = require('./DuLich.js')
+const postRouter = require('./Post.js')
 
 module.exports = (app) => {
     app.use('/api/monan', monAnRouter)
@@ -10,7 +11,7 @@ module.exports = (app) => {
     app.use('/api/trochoi', troChoiRouter)
     app.use('/api/lehoi', leHoiRouter)
     app.use('/api/dulich', duLichRouter)
-
+    app.use('/api/post', postRouter)
 
     app.use('/', (req, res) => {
         res.send('HELLO WORLD')

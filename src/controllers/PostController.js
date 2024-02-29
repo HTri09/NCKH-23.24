@@ -1,8 +1,7 @@
-require('dotenv').config()
 const { json } = require('sequelize')
-const { OpenAI } = require('openai')
+const { GoogleGenerativeAI } = require("@google/generative-ai");
+require('dotenv').config({ path: '.env' })
 
-const openai = new OpenAI();
 
 module.exports = {
 
@@ -29,26 +28,25 @@ module.exports = {
         }
     },
 
-    // [POST] /api/chat-bot
+    // [POST] /api/chatbot
     chat: async (req, res) => {
-        const content = req.body.content
+        const prompt = req.body.content
 
         try {
-            const stream = await openai.chat.completions.create({
-                model: 'gpt-3.5-turbo',
-                max_tokens: 50,
-                temperature: 0.7,
-                messages: [
-                    {
-                        role: 'user',
-                        content: content
-                    }
-                ]
-            })
-            res.send(stream)
+            const genAI = new GoogleGenerativeAI(process.env.GEMINI_API_KEY);
+
+            // For text-only input, use the gemini-pro model
+            const model = genAI.getGenerativeModel({ model: "gemini-pro" });
+
+
+            const result = await model.generateContent(prompt);
+            const response = await result.response;
+            const text = response.text();
+
+            res.send(text)
 
         } catch (error) {
-            res.send(error)
+            res.send('Something went wrong')
             console.log(error)
         }
     }

@@ -1,2 +1,0 @@
-- Thêm các api tìm kiếm (tìm kiếm bằng ảnh, tên, ...)
-- Thêm cái AI

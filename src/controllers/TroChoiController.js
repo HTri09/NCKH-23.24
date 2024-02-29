@@ -1,4 +1,5 @@
 const { TroChoi } = require('../models')
+const { removeVietnameseTones } = require('../helper/helperFunction')
 
 module.exports = {
     // [GET] /api/trochoi
@@ -25,6 +26,25 @@ module.exports = {
             res.json(data)
         } catch(err) {
             res.json(err)
+        }
+    },
+
+    // [POST] /api/trochoi/searchByName
+    searchByName: async (req, res) => {
+        const content = removeVietnameseTones(req.body.content)
+
+        try {
+            const data = JSON.stringify(await MonAn.findAll())
+            const monAn = JSON.parse(data).filter(item => {
+                removedTonesItem = removeVietnameseTones(item.ten) // Remove vietnamese tones from item's name
+                return removedTonesItem.includes(content)
+            })
+
+            res.send(monAn)
+
+        } catch (error) {
+            res.send(error.status)
+            console.log(error)
         }
     }
 }

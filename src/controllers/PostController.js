@@ -5,6 +5,7 @@ const { OpenAI } = require('openai')
 const openai = new OpenAI();
 
 module.exports = {
+
     // [POST] /api/post/
     post: async (req, res) => {
         try {

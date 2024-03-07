@@ -1,35 +1,23 @@
-// Use `tfjs`.
+// Import the TensorFlow.js library
 const tf = require('@tensorflow/tfjs-node');
+// require('@tensorflow/tfjs-node/dist/nodejs_kernel_backend')
 
-// const model = tf.node.loadSavedModel('./cats-and-dogs/model.h5')
 
+// Define the main function that will load the saved model
+const main = async () => {
+    try {
+        // Specify the path to the saved model
+        const modelPath = './mobile.pb';
 
-// Create a simple model.
-const model = tf.sequential();
-model.add(tf.layers.dense({ units: 1, inputShape: [1] }));
+        // Load the saved model using the `loadSavedModel()` method
+        const model = await tf.node.loadSavedModel(modelPath);
 
-// Prepare the model for training: Specify the loss and the optimizer.
-model.compile({ loss: 'meanSquaredError', optimizer: 'sgd' });
-
-// Generate some synthetic data for training. (y = 2x - 1)
-const xs = tf.tensor2d([-1, 0, 1, 2, 3, 4], [6, 1]);
-const ys = tf.tensor2d([-3, -1, 1, 3, 5, 7], [6, 1]);
-
-// Train the model using the data.
-async function main() {
-    // Create a simple model.
-    const model = tf.sequential();
-    model.add(tf.layers.dense({ units: 1, inputShape: [1] }));
-
-    // Prepare the model for training: Specify the loss and the optimizer.
-    model.compile({ loss: 'meanSquaredError', optimizer: 'sgd' });
-
-    // Generate some synthetic data for training. (y = 2x - 1)
-    const xs = tf.tensor2d([-1, 0, 1, 2, 3, 4], [6, 1]);
-    const ys = tf.tensor2d([-3, -1, 1, 3, 5, 7], [6, 1]);
-
-    // Train the model using the data.
-    await model.fit(xs, ys, { epochs: 250 })
+        // Log the loaded model to the console
+        console.log('Model loaded:', model);
+    } catch (err) {
+        console.error('Error loading model:', err);
+    }
 }
 
-main()
+// Call the main function to load the saved model
+main();

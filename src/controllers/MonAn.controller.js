@@ -6,8 +6,10 @@ module.exports = {
     get: async (req, res) => {
         try {
             const data = await MonAn.findAll()
+            console.log('success')
             res.json(data)
         } catch (err) {
+            console.log(err)
             res.status(500).json({
                 status: err.status,
                 msg: err.msg

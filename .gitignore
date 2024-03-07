@@ -43,6 +43,7 @@ node_modules/
 jspm_packages/
 cats-and-dogs/
 .venv/
+mobile.pb/
 
 # Snowpack dependency directory (https://snowpack.dev/)
 web_modules/

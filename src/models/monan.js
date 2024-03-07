@@ -22,6 +22,9 @@ module.exports = (sequelize, DataTypes) => {
     },
     cachCheBien: {
       type: DataTypes.TEXT
+    },
+    hinhAnh: {
+      type: DataTypes.TEXT
     }
   }, {
     sequelize,

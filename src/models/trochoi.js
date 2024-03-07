@@ -22,6 +22,9 @@ module.exports = (sequelize, DataTypes) => {
     },
     nguonGoc: {
       type: DataTypes.STRING
+    },
+    hinhAnh: {
+      type: DataTypes.STRING
     }
   }, {
     sequelize,

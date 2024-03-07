@@ -31,6 +31,9 @@ module.exports = (sequelize, DataTypes) => {
     },
     hoatDong: {
       type: DataTypes.STRING
+    },
+    hinhAnh: {
+      type: DataTypes.STRING
     }
   }, {
     sequelize,

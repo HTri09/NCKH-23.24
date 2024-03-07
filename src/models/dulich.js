@@ -16,7 +16,8 @@ module.exports = (sequelize, DataTypes) => {
   DuLich.init({
     ten: DataTypes.STRING,
     moTa: DataTypes.TEXT,
-    hoatDong: DataTypes.STRING
+    hoatDong: DataTypes.STRING,
+    hinhAnh: DataTypes.STRING
   }, {
     sequelize,
     modelName: 'DuLich',

@@ -1,8 +1,8 @@
-const monAnRouter = require('./MonAn.js')
-const trangPhucRouter = require('./TrangPhuc.js')
-const troChoiRouter = require('./TroChoi.js')
-const leHoiRouter = require('./LeHoi.js')
-const duLichRouter = require('./DuLich.js')
+const monAnRouter = require('./MonAn.router.js')
+const trangPhucRouter = require('./TrangPhuc.router.js')
+const troChoiRouter = require('./TroChoi.router.js')
+const leHoiRouter = require('./LeHoi.router.js')
+const duLichRouter = require('./DuLich.router.js')
 const postRouter = require('./Post.js')
 
 module.exports = (app) => {

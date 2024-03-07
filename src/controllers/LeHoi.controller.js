@@ -1,11 +1,11 @@
-const { TroChoi } = require('../models')
+const { LeHoi } = require('../models')
 const { removeVietnameseTones } = require('../helper/helperFunction')
 
 module.exports = {
-    // [GET] /api/trochoi
+    // [GET] /api/lehoi
     get: async (req, res) => {
         try {
-            const data = await TroChoi.findAll()
+            const data = await LeHoi.findAll()
             res.json(data)
         } catch (err) {
             res.status(500).json({
@@ -15,12 +15,12 @@ module.exports = {
         }
     },
 
-    // [GET] /api/trochoi/:id
+    // [GET] /api/lehoi/:id
     getById: async (req, res) => {
         try {
             const params = req.params
             console.log(params)
-            const data = await TroChoi.findOne({
+            const data = await LeHoi.findOne({
                 where: { id: params.id }
             })
             res.json(data)
@@ -29,8 +29,8 @@ module.exports = {
         }
     },
 
-    // [POST] /api/trochoi/searchByName
-    searchByName: async (req, res) => {
+    // [POST] /api/lehoi/searchByName
+    getByName: async (req, res) => {
         const content = removeVietnameseTones(req.body.content)
 
         try {

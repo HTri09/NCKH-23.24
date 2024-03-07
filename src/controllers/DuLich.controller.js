@@ -1,12 +1,12 @@
-const { TrangPhuc } = require('../models')
+const { DuLich } = require('../models')
 const { removeVietnameseTones } = require('../helper/helperFunction')
 
 
 module.exports = {
-    // [GET] /api/trangphuc
+    // [GET] /api/dulich
     get: async (req, res) => {
         try {
-            const data = await TrangPhuc.findAll()
+            const data = await DuLich.findAll()
             res.json(data)
         } catch (err) {
             res.status(500).json({
@@ -16,12 +16,12 @@ module.exports = {
         }
     },
 
-    // [GET] /api/trangphuc/:id
+    // [GET] /api/dulich/:id
     getById: async (req, res) => {
         try {
             const params = req.params
             console.log(params)
-            const data = await TrangPhuc.findOne({
+            const data = await DuLich.findOne({
                 where: { id: params.id }
             })
             res.json(data)
@@ -30,31 +30,12 @@ module.exports = {
         }
     },
 
-    // [POST] /api/post/searchByName
-    searchByName: async (req, res) => {
+    // [POST] /api/dulich/searchByName
+    getByName: async (req, res) => {
         const content = removeVietnameseTones(req.body.content)
 
         try {
-            const data = JSON.stringify(await MonAn.findAll())
-            const monAn = JSON.parse(data).filter(item => {
-                removedTonesItem = removeVietnameseTones(item.ten) // Remove vietnamese tones from item's name
-                return removedTonesItem.includes(content)
-            })
-
-            res.send(monAn)
-
-        } catch (error) {
-            res.send(error.status)
-            console.log(error)
-        }
-    },
-
-    // [POST] /api/trangphuc/searchByName
-    searchByName: async (req, res) => {
-        const content = removeVietnameseTones(req.body.content)
-
-        try {
-            const data = JSON.stringify(await MonAn.findAll())
+            const data = JSON.stringify(await DuLich.findAll())
             const monAn = JSON.parse(data).filter(item => {
                 removedTonesItem = removeVietnameseTones(item.ten) // Remove vietnamese tones from item's name
                 return removedTonesItem.includes(content)

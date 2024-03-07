@@ -1,11 +1,12 @@
-const { MonAn } = require('../models')
+const { TrangPhuc } = require('../models')
 const { removeVietnameseTones } = require('../helper/helperFunction')
 
+
 module.exports = {
-    // [GET] /api/monan
+    // [GET] /api/trangphuc
     get: async (req, res) => {
         try {
-            const data = await MonAn.findAll()
+            const data = await TrangPhuc.findAll()
             res.json(data)
         } catch (err) {
             res.status(500).json({
@@ -15,22 +16,23 @@ module.exports = {
         }
     },
 
-    // [GET] /api/monan/:id
+    // [GET] /api/trangphuc/:id
     getById: async (req, res) => {
         try {
             const params = req.params
             console.log(params)
-            const data = await MonAn.findOne({
+            const data = await TrangPhuc.findOne({
                 where: { id: params.id }
             })
             res.json(data)
-        } catch (err) {
+        } catch(err) {
             res.json(err)
         }
     },
 
-    // [POST] /api/monan/searchByName
-    searchByName: async (req, res) => {
+
+    // [POST] /api/trangphuc/getByName
+    getByName: async (req, res) => {
         const content = removeVietnameseTones(req.body.content)
 
         try {

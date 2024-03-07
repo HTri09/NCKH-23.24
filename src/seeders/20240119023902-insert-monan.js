@@ -4,20 +4,6 @@
 /** @type {import('sequelize-cli').Migration} */
 module.exports = {
     async up(queryInterface, Sequelize) {
-        // const fs = require('fs')
-        // const filePath = './data/monan.json'
-        // let monan
-
-        // fs.readFile(filePath, 'utf8', (err, data) => {
-        //     if (err) {
-        //         console.error('Error reading file:', err)
-        //     } else {
-        //         monan = JSON.parse(data)
-        //     }
-        // });
-
-        // console.log('Bulk Insert Query:', queryInterface.bulkInsert('monan', [monan]));
-
         return await queryInterface.bulkInsert('monan', [
             {
                 "ten": "Phở bò",

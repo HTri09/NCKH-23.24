@@ -5,12 +5,12 @@ require('dotenv').config({ path: '.env' })
 
 module.exports = {
 
-    // [POST] /api/post/
+    // [POST] /api/post
     post: async (req, res) => {
         try {
             const data = req.body
 
-            console.log(data)
+            // console.log(data)
             res.send(json(data))
         } catch (error) {
             console.log(error)
@@ -21,7 +21,7 @@ module.exports = {
     postThroughParam: async (req, res) => {
         try {
             const data = req.params
-            console.log(data)
+            // console.log(data)
             res.send('Post succesfully !')
         } catch (error) {
             console.log(error)

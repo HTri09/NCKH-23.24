@@ -18,17 +18,8 @@ module.exports = {
       hoatDong: {
         type: Sequelize.STRING
       },
-      createdAt: {
-        allowNull: false,
-        type: Sequelize.DATE,
-        defaultValue: Sequelize.fn('NOW')
-
-      },
-      updatedAt: {
-        allowNull: false,
-        type: Sequelize.DATE,
-        defaultValue: Sequelize.fn('NOW')
-
+      hinhAnh: {
+        type: Sequelize.STRING
       }
     });
   },

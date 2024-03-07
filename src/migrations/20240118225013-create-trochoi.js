@@ -20,7 +20,18 @@ module.exports = {
       },
       hinhAnh: {
         type: Sequelize.STRING
-      }
+      },
+      createdAt: {
+        allowNull: false,
+        type: Sequelize.DATE,
+        defaultValue: Sequelize.fn('NOW')
+      },
+      updatedAt: {
+        allowNull: false,
+        type: Sequelize.DATE,
+        defaultValue: Sequelize.fn('NOW')
+
+      },
     });
   },
   async down(queryInterface, Sequelize) {

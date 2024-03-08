@@ -1,5 +1,6 @@
 const { Sequelize } = require('sequelize')
 
+
 async function connect() {
     try {
         const db = new Sequelize('postgres://postgres:Emhoclop12@3@localhost:5000/KhamPhaVanHoaVietNam', {

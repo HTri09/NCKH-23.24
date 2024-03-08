@@ -4,7 +4,7 @@ const router = Router()
 const duLichController = require('../controllers/DuLich.controller.js')
 
 router.get('/', duLichController.get)
-router.get('/:id', duLichController.getById)
-router.post('/getByName', duLichController.getByName)
+router.get('/id=:id', duLichController.getById)
+router.post('/name', duLichController.getByName)
 
 module.exports = router

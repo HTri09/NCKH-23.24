@@ -15,7 +15,7 @@ module.exports = {
         }
     },
 
-    // [GET] /api/lehoi/:id
+    // [POST] /api/lehoi/:id
     getById: async (req, res) => {
         try {
             const params = req.params
@@ -34,13 +34,13 @@ module.exports = {
         const content = removeVietnameseTones(req.body.content)
 
         try {
-            const data = JSON.stringify(await MonAn.findAll())
-            const monAn = JSON.parse(data).filter(item => {
+            const data = JSON.stringify(await LeHoi.findAll())
+            const leHoi = JSON.parse(data).filter(item => {
                 removedTonesItem = removeVietnameseTones(item.ten) // Remove vietnamese tones from item's name
                 return removedTonesItem.includes(content)
             })
 
-            res.send(monAn)
+            res.send(leHoi)
 
         } catch (error) {
             res.send(error.status)

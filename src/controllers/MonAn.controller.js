@@ -1,5 +1,6 @@
 const { MonAn } = require('../models')
 const { removeVietnameseTones } = require('../helper/helperFunction')
+const { response } = require('express')
 
 module.exports = {
     // [GET] /api/monan
@@ -17,7 +18,7 @@ module.exports = {
         }
     },
 
-    // [GET] /api/monan/:id
+    // [POST] /api/monan/:id
     getById: async (req, res) => {
         try {
             const params = req.params

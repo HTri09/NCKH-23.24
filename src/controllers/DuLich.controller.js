@@ -36,12 +36,12 @@ module.exports = {
 
         try {
             const data = JSON.stringify(await DuLich.findAll())
-            const monAn = JSON.parse(data).filter(item => {
+            const duLich = JSON.parse(data).filter(item => {
                 removedTonesItem = removeVietnameseTones(item.ten) // Remove vietnamese tones from item's name
                 return removedTonesItem.includes(content)
             })
 
-            res.send(monAn)
+            res.send(duLich)
 
         } catch (error) {
             res.send(error.status)

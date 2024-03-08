@@ -4,10 +4,8 @@ const troChoiRouter = require('./TroChoi.router.js')
 const leHoiRouter = require('./LeHoi.router.js')
 const duLichRouter = require('./DuLich.router.js')
 const featureRouter = require('./Feature.router.js')
-const authRouter = require('./auth.router.js')
 
 module.exports = (app) => {
-    app.use('/', authRouter)
     app.use('/api/monan', monAnRouter)
     app.use('/api/trangphuc', trangPhucRouter)
     app.use('/api/trochoi', troChoiRouter)

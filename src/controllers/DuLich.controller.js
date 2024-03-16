@@ -25,7 +25,7 @@ module.exports = {
                 where: { id: params.id }
             })
             res.json(data)
-        } catch(err) {
+        } catch (err) {
             res.json(err)
         }
     },

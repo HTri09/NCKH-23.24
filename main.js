@@ -26,5 +26,5 @@ route(app)
 
 
 app.listen(PORT, async () => {
-    console.log(`Listening at port ${PORT}`)
+    console.log(`Listening at http://localhost:${PORT}`)
 })

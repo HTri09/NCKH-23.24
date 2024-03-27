@@ -1,5 +1,5 @@
 const { MonAn } = require('../models')
-const { removeVietnameseTones } = require('../helper/helperFunction')
+const { removeVietnameseTones } = require('../util/helperFunction')
 const { response } = require('express')
 
 module.exports = {

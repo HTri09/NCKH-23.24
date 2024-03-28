@@ -1,15 +1,21 @@
 const { Sequelize } = require('sequelize')
+const logger = require('../utils/errorLogger')
+const config = require('./config.json')[process.env.NODE_ENV || 'development']
 
 
 async function connect() {
     try {
-        const db = new Sequelize('postgres://postgres:Emhoclop12@3@localhost:5000/KhamPhaVanHoaVietNam', {
-            logging: false
+        const db = new Sequelize(config.database, config.username, config.password, {
+            host: config.host,
+            dialect: config.dialect,
+            port: config.port,
+            logging: false,
+            timezone: config.timezone
         })
-        await db.authenticate()
+        db.authenticate()
         console.log('Database connected !\n=== === === === === === === \n')
     } catch(error) {
-        console.log(error)
+        logger.error(`Database connection failure: ${error.message}`)
     }
 }
 

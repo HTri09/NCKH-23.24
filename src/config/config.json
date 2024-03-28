@@ -9,17 +9,21 @@
     "timezone": "+07:00"
   },
   "test": {
-    "username": "root",
-    "password": null,
-    "database": "database_test",
-    "host": "127.0.0.1",
-    "dialect": "mysql"
+    "username": "postgres",
+    "password": "Emhoclop12@3",
+    "database": "KhamPhaVanHoaVietNam",
+    "host": "localhost",
+    "port": "5000",
+    "dialect": "postgres",
+    "timezone": "+07:00"
   },
   "production": {
-    "username": "root",
-    "password": null,
-    "database": "database_production",
-    "host": "127.0.0.1",
-    "dialect": "mysql"
+    "username": "postgres",
+    "password": "Emhoclop12@3",
+    "database": "KhamPhaVanHoaVietNam",
+    "host": "localhost",
+    "port": "5000",
+    "dialect": "postgres",
+    "timezone": "+07:00"
   }
 }

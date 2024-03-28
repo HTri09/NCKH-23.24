@@ -1,5 +1,5 @@
 const { TroChoi } = require('../models')
-const { removeVietnameseTones } = require('../util/helperFunction')
+const { removeVietnameseTones } = require('../utils/removeVietnameseTones')
 
 module.exports = {
     // [GET] api/trochoi

@@ -1,5 +1,6 @@
 const { DuLich } = require('../models')
-const { removeVietnameseTones } = require('../util/helperFunction')
+const { removeVietnameseTones } = require('../utils/removeVietnameseTones')
+// const logger = require('../utils/errorLogger')
 
 
 module.exports = {

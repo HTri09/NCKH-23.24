@@ -3,7 +3,7 @@ const morgan = require('morgan')
 require('dotenv').config()
 
 const route = require('./src/routes/index')
-const connect = require('./src/config/index')
+const { connect } = require('./src/config/index')
 const { requestLogger, errorLogger } = require('./src/middleware/index.js')
 
 const app = express()
@@ -26,7 +26,6 @@ app.use(morgan('dev'))
 
 // Routes init
 route(app)
-
 
 app.listen(PORT, async () => {
     console.log(`Listening at http://localhost:${PORT}`)

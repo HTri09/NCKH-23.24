@@ -4,6 +4,7 @@ const troChoiRouter = require('./TroChoi.router.js')
 const leHoiRouter = require('./LeHoi.router.js')
 const duLichRouter = require('./DuLich.router.js')
 const featureRouter = require('./Feature.router.js')
+const imgRouter = require('./image.router.js')
 
 module.exports = (app) => {
     app.use('/api/monan', monAnRouter)
@@ -12,6 +13,7 @@ module.exports = (app) => {
     app.use('/api/lehoi', leHoiRouter)
     app.use('/api/dulich', duLichRouter)
     app.use('/api', featureRouter)
+    app.use('/api/img', imgRouter)
 
     app.use('/', (req, res) => {
         res.send('HELLO WORLD')

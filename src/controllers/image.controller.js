@@ -2,6 +2,7 @@ const { getStorage, ref, uploadBytesResumable } = require('firebase/storage')
 const { signInWithEmailAndPassword } = require("firebase/auth");
 const { auth } = require('../config/index')
 const path = require('path')
+const logger = require('../utils/errorLogger')
 
 async function uploadImage(file, quantity) {
     const storageFB = getStorage();
@@ -60,6 +61,7 @@ module.exports = {
         } catch (err) {
             console.log(err);
             res.send(err)
+            logger.error(`Upload image error: ${err}`)
         }
     },
 
@@ -67,16 +69,23 @@ module.exports = {
     // [POST] api/upload-multiple
     uploadMultipleImgs: async (req, res) => {
         try {
-            const buildImage = await uploadImage(req.files, 'multiple');
+            const buildImage = await uploadImage(req.files, 'multiple')
             console.log('Upload completed')
             res.send({
                 status: "SUCCESS",
                 imageName: buildImage
             })
         } catch (err) {
-            console.log(err);
+            console.log(err)
             res.send(err)
+            logger.error(`Upload images error: ${err}`)
         }
+    }, 
+
+
+    // [POST] api/send
+    send: async (req, res) => {
+        res.send('hello')
     },
 
     get: (req, res) => {
@@ -84,3 +93,4 @@ module.exports = {
     }
 
 }
+    

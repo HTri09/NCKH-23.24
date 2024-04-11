@@ -1,60 +1,30 @@
-const { getStorage, ref, uploadBytesResumable } = require('firebase/storage')
-const { signInWithEmailAndPassword } = require("firebase/auth");
-const { auth } = require('../config/index')
-const path = require('path')
+const axios = require('axios')
+const FormData = require('form-data')
+require('dotenv').config()
+
+const { uploadSingleImg, uploadMultipleImgs} = require('../utils/uploadIamge')
 const logger = require('../utils/errorLogger')
 
-async function uploadImage(file, quantity) {
-    const storageFB = getStorage();
+const protocol = process.env.FAST_API_SERVER_PROTOCOL
+const domain = process.env.FAST_API_SERVER_DOMAIN
+const port = process.env.FAST_API_SERVER_PORT
 
-    await signInWithEmailAndPassword(auth, process.env.FIREBASE_USER, process.env.FIREBASE_AUTH)
-
-    if (quantity === 'single') {
-        // const dateTime = Date.now();
-        const fileName = `images/${path.parse(file.originalName).name}`
-        const storageRef = ref(storageFB, fileName)
-        const metadata = {
-            contentType: file.type,
-        }
-        await uploadBytesResumable(storageRef, file.buffer, metadata);
-        return fileName
-    }
-
-    if (quantity === 'multiple') {
-        for (let i = 0; i < file.length; i++) {
-            // const dateTime = Date.now();
-            const fileName = `images/${path.parse(file[i].originalname).name}`
-            const storageRef = ref(storageFB, fileName)
-            const metadata = {
-                contentType: file[i].mimetype,
-            }
-
-            // const saveImage = await new Image({ imageUrl: fileName });
-            // file.item.imageId.push({ _id: saveImage._id });
-            // await file.item.save();
-
-            console.log(`Upload images[${i}] completed !`)
-            await uploadBytesResumable(storageRef, file[i].buffer, metadata);
-        }
-        return
-    }
-
-}
 
 module.exports = {
     // [POST] api/upload-single
-    uploadSingleImg: async (req, res) => {
-        const file = {
-            type: req.file.mimetype,
-            buffer: req.file.buffer,
-            originalName: req.file.originalname,
-            directory: req.body.dst
-        }
-
+    uploadSingleImage: async (req, res) => {
         try {
-            const buildImage = await uploadImage(file, 'single');
+            const file = {
+                type: req.file.mimetype,
+                buffer: req.file.buffer,
+                originalName: req.file.originalname,
+                directory: req.body.dst
+            }
+
+            const buildImage = await uploadSingleImg(file);
+            
             console.log('Upload completed')
-            res.send({
+            res.json({
                 status: "SUCCESS",
                 imageName: buildImage
             })
@@ -65,13 +35,12 @@ module.exports = {
         }
     },
 
-
     // [POST] api/upload-multiple
-    uploadMultipleImgs: async (req, res) => {
+    uploadMultipleImages: async (req, res) => {
         try {
-            const buildImage = await uploadImage(req.files, 'multiple')
+            const buildImage = await uploadMultipleImgs(req.files)
             console.log('Upload completed')
-            res.send({
+            res.json({
                 status: "SUCCESS",
                 imageName: buildImage
             })
@@ -80,17 +49,33 @@ module.exports = {
             res.send(err)
             logger.error(`Upload images error: ${err}`)
         }
-    }, 
-
-
-    // [POST] api/send
-    send: async (req, res) => {
-        res.send('hello')
     },
 
-    get: (req, res) => {
-        res.send('succes')
-    }
+    // [POST] api/upload-to-predict
+    uploadToPredict: async (req, res) => {
+        try {
+            // Get image buffer from client request
+            const imageBuffer = req.file.buffer
 
+            // Define form data to fetch fastAPI server
+            const url = `${protocol}://${domain}:${port}/image`
+            const formData = new FormData();
+            formData.append('buffer', imageBuffer, {
+                filename: req.file.originalname,
+                contentType: 'image/jpeg'
+            })
+            const config = {
+                headers: {
+                    ...formData.getHeaders()
+                }
+            }
+
+            // Fetch fastAPI server
+            const response = await axios.post(url, formData, config)
+            res.json({ "response": response.data })
+        } catch (error) {
+            logger.error(`Upload to predict error: ${error}`)
+            res.json(error.message)
+        }
+    },
 }
-    

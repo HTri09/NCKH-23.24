@@ -13,7 +13,7 @@ module.exports = (app) => {
     app.use('/api/lehoi', leHoiRouter)
     app.use('/api/dulich', duLichRouter)
     app.use('/api', featureRouter)
-    app.use('/api/img', imgRouter)
+    app.use('/api/image', imgRouter)
 
     app.use('/', (req, res) => {
         res.send('HELLO WORLD')

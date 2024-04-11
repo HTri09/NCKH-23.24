@@ -4,30 +4,6 @@ require('dotenv').config({ path: '.env' })
 
 
 module.exports = {
-
-    // [POST] /api/post
-    post: async (req, res) => {
-        try {
-            const data = req.body
-
-            // console.log(data)
-            res.send(json(data))
-        } catch (error) {
-            console.log(error)
-        }
-    },
-
-    // [POST] /api/post/:id
-    postThroughParam: async (req, res) => {
-        try {
-            const data = req.params
-            // console.log(data)
-            res.send('Post succesfully !')
-        } catch (error) {
-            console.log(error)
-        }
-    },
-
     // [POST] /api/chatbot
     chat: async (req, res) => {
         const prompt = req.body.content

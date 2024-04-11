@@ -4,8 +4,8 @@ const router = Router()
 
 const imgController = require('../controllers/image.controller.js')
 
-router.post('/upload-single', upload, imgController.uploadSingleImg)
-router.post('/upload-multiple', uploadMultiple, imgController.uploadMultipleImgs)
-router.get('/test', imgController.get)
-
+router.post('/upload-single', upload, imgController.uploadSingleImage)
+router.post('/upload-multiple', uploadMultiple, imgController.uploadMultipleImages)
+router.post('/upload-to-predict', upload, imgController.uploadToPredict)
+    
 module.exports = router 
